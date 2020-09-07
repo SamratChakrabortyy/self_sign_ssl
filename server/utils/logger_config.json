@@ -1,0 +1,20 @@
+{
+  "appenders": {
+    "consolelog": {
+      "type": "console"
+    },
+    "accesslog": {
+      "type": "file",
+      "filename": "/var/log/caserver.log"
+    }
+  },
+  "categories": {
+    "default": {
+      "level": "debug",
+      "appenders": [
+        "accesslog",
+        "consolelog"
+      ]
+    }
+  }
+}
