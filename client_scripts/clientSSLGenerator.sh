@@ -1,6 +1,6 @@
 KEY_LOC=$1
 CN=$2
-CA_SERVER=http://192.168.20.172:3000
+CA_SERVER=http://192.168.20.17:3010
 cd $KEY_LOC
 mkdir $CN
 openssl genrsa -out $CN/$CN.key 2048

@@ -8,5 +8,5 @@ echo 01 > /etc/pki/CA/serial
 rm -rf certs
 mkdir certs
 openssl genrsa -out certs/root-ca.key 2048
-openssl req -new -x509 -days 365 -config ./openssl.cnf -key certs/root-ca.key -out certs/root-cacert.pem -subj "/C=IN/ST=WB/O=EMQ/CN=RootCA"
+openssl req -new -x509 -days 365 -config ./openssl.cnf -key certs/root-ca.key -out certs/root-cacert.pem -subj "/C=US/ST=Baltimore/O=EMQ/CN=RootCA"
 openssl x509 -in certs/root-cacert.pem -noout -text
