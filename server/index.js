@@ -38,8 +38,11 @@ app.post('/signCSR', upload.single('csrFile'), (req, res, next) => {
         }
         logger.info(`File with name ${csrFileName} successfully saved at ${csrFilePath}`);
         try {
+            let days = req.params.days;
+            days = days == undefined ? 90 : days;
+            logger.debug(`Days for certificate being active ${days}`);
             logger.info(`Attempting to sign ${csrFileName}`);
-            let tarFileName = execSync(`${csrSigningScipt} ${csrFilePath} ${csrFileName.substring(0, csrFileName.lastIndexOf(".csr"))}`, {
+            let tarFileName = execSync(`${csrSigningScipt} ${csrFilePath} ${csrFileName.substring(0, csrFileName.lastIndexOf(".csr"))} ${days}`, {
                 timeout: 60 * 1000,
                 cwd : caDir
             }).toString('utf8');
