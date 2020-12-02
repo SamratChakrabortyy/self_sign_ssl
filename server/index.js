@@ -9,7 +9,7 @@ const log4js = require('log4js');
 const port = 3000;
 const inputCSRDir = "/opt/ssl/client/CSR";
 const csrSigningScipt = "./keySignScript.sh";
-const caDir = "./scripts"
+const caDir = "/opt/ssl"
 const multer = require('multer');
 const upload = multer({
     dest: inputCSRDir
